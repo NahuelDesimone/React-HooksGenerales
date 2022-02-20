@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Padre } from './components/07-tarea-memo/Padre';
 
-import { Layout } from './components/05-useLayoutEffect/Layout';
 
 ReactDOM.render(
-    <Layout />,
+    <Padre />,
   document.getElementById('root')
 );
