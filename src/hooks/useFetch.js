@@ -25,18 +25,20 @@ export const useFetch = (url) => {
             .then(data => {
 
                 if (estaMontado.current) {
-                    setTimeout(() => {
-                        setState({
-                            ...state,
-                            loading: false,
-                            error: null,
-                            data
-                        })
-                    }, 1000)
+                    setState({
+                        loading: false,
+                        error: null,
+                        data
+                    })
+
                 }
-                else{
-                    console.log("SetState no se llamo");
-                }
+            })
+            .catch(() => {
+                setState({
+                    data: null,
+                    loading: false,
+                    error: "No se pudo cargar la info"
+                })
             })
     }, [url])
 

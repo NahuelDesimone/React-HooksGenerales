@@ -6,8 +6,6 @@ import '../02-useEffect/effects.css'
 export const MultipleCustomHook = () => {
 
   const {counter, increment} = useCounter(1);
-
-
   const { loading, data } = useFetch(`https://www.breakingbadapi.com/api/quotes/${counter}`);
 
   const {author,quote} = !!data && data[0]; //Si data no es null entonces extrae la posicion 0 de data
